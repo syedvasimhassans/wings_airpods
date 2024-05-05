@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allerta&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+        body{
+            background-color: rgba(110, 113, 116, 0.904);
+            margin: 10px;
+        }
+        .topmenu{
+            position:fixed;
+            margin-top: -68px;
+            width: 100%;
+            z-index: 20;
+            animation-name: topinmenu;
+            animation-duration: 2s;
+            animation-iteration-count: initial;
+        }
+        .logosm{
+            height: 60px;
+            margin-left: 10px;
+        }
+        .undergreen{
+            width: 99%;
+            height: 60px;
+            background-color: rgb(10, 138, 12);
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 128, 0, 0.497), -5px -5px 15px rgba(0, 128, 0, 0.497);
+            position: relative;
+            z-index: 0;
+            margin-left: -2px;
+        }
+        .bl{
+            height: 70px;
+            width: 10%;
+            /* clip-path: polygon(30% 0, 100% 0%, 70% 100%, 0% 100%); */
+            clip-path: polygon(36% 0, 100% 0%, 66% 100%, 0% 100%);
+            margin-top: -65px;
+        }
+        .al1{
+            margin-left: 35%;
+            background-color: rgba(0, 0, 0, 0.800);
+            position: relative;
+            z-index: 2;
+        }
+        .al2{
+            position: relative;
+            /* width: 10%; */
+            background-color: rgba(0, 0, 0, 0.500);
+            margin-left: 25%;
+            margin-top: -70px;
+            z-index: 3;
+        }
+        .al3{
+            position: relative;
+            /* width: 10%; */
+            background-color: rgba(0, 0, 0, 0.200);
+            z-index: 4;
+            margin-left: 15%;
+            margin-top: -70px;
+        }
+        .menu{
+            clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 20% 100%);
+            height: 70px;
+            width: 65%;
+            margin-left: 400px;
+            margin-top: -70px;
+            background-color: black;
+            display: flex;
+            text-align: end;
+            position: relative;
+            z-index: 1;
+        }
+        ul{
+            
+            margin-left: 200px;
+            margin-top: 12px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        ul li{
+            list-style: none;
+        }
+        ul li a{
+            text-decoration: none;
+            color: rgb(72, 72, 72);
+            font-size: 22px;
+            display: block;
+            padding: 10px 15px;
+            position: relative;
+        }
+        ul li a:before{
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: rgba(11, 255, 11, 0.755);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: all 0.5s;
+        }
+        ul li a:after{
+            content:'';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: rgba(11, 255, 11, 0.755);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: all 0.5s;
+        }
+        ul li a:hover{
+            color: rgba(11, 255, 11, 0.755);
+        }
+        ul li a:hover:before, ul li a:hover:after{
+            transform: scaleX(1);
+        } 
+        @media only screen and (max-width:992px) 
+        {
+            .undergreen{
+            width: 99%;
+            height: 45px;
+            background-color: rgb(10, 138, 12);
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 128, 0, 0.497), -5px -5px 15px rgba(0, 128, 0, 0.497);
+            position: relative;
+            z-index: 0;
+            margin-left: -2px;
+        }
+        .logosm{
+            height: 50px;
+            margin-left: 10px;
+        }
+            .menu{
+            clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 20% 100%);
+            height: 50px;
+            width: 70%;
+            margin-left: 27%;
+            margin-top: -50px;
+            background-color: black;
+            display: flex;
+            text-align: end;
+            position: relative;
+            z-index: 1;
+            }  
+            .bl{
+            height: 50px;
+            width: 10%;
+            clip-path: polygon(36% 0, 100% 0%, 66% 100%, 0% 100%);
+            margin-top: -45px;
+            position: relative;
+            z-index: 1;
+        }
+        .al1{
+            margin-left: 30%;
+            background-color: rgba(0, 0, 0, 0.800);
+            position: relative;
+            z-index: 2;
+        }
+        .al2{
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.500);
+            margin-left: 20%;
+            margin-top: -50px;
+            z-index: 3;
+        }
+        .al3{
+            position: relative;
+            /* width: 10%; */
+            background-color: rgba(0, 0, 0, 0.200);
+            z-index: 4;
+            margin-left: 10%;
+            margin-top: -50px;
+        }
+
+        }
+        @media only screen and (max-width:768px) 
+        {
+            .undergreen{
+            width: 99%;
+            height: 45px;
+            background-color: rgb(10, 138, 12);
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 128, 0, 0.497), -5px -5px 15px rgba(0, 128, 0, 0.497);
+            position: relative;
+            z-index: 0;
+            margin-left: -2px;
+        }
+        .logosm{
+            height: 50px;
+            margin-left: 10px;
+        }
+            .menu{
+            clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 20% 100%);
+            height: 50px;
+            width: 70%;
+            margin-left: 270px;
+            margin-top: -50px;
+            background-color: black;
+            display: flex;
+            text-align: end;
+            position: relative;
+            z-index: 1;
+            }  
+            .bl{
+            height: 50px;
+            width: 10%;
+            clip-path: polygon(36% 0, 100% 0%, 66% 100%, 0% 100%);
+            margin-top: -45px;
+            position: relative;
+            z-index: 1;
+        }
+        .al1{
+            margin-left: 30%;
+            background-color: rgba(0, 0, 0, 0.800);
+            position: relative;
+            z-index: 2;
+        }
+        .al2{
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.500);
+            margin-left: 20%;
+            margin-top: -50px;
+            z-index: 3;
+        }
+        .al3{
+            position: relative;
+            /* width: 10%; */
+            background-color: rgba(0, 0, 0, 0.200);
+            z-index: 4;
+            margin-left: 10%;
+            margin-top: -50px;
+        }
+
+        }
+        /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+        /* page_1 */
+        .page1{
+            height: 600px;
+            width: 100%;
+            margin-top: 75px;
+            /* background-color: rgba(93, 96, 99, 0.904); */
+            background-image: url(./black_bg_small.jpg);
+            background-size: cover;
+            overflow: hidden;
+            position: relative;
+        }
+        h1{
+            margin-top: -50px;
+            font-family: 'Allerta', sans-serif;
+            font-size: 100px;
+            background-image: linear-gradient(to bottom, rgb(37, 154, 21), rgb(10, 24, 14));
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            z-index: 0;
+            position: relative;
+            animation-name: h1animation;
+            animation-duration: 3s;
+            animation-iteration-count: inherit;
+        }
+        @keyframes h1animation {
+            0%{opacity: -1;left: 1000px;}
+            100%{opacity: 1;left: 0px;}
+        }
+        h3{
+            font-weight: 50;
+            font-family: fantasy;
+            font-size: 50px;
+            margin-top: -90px;
+            margin-left: 10px;
+            z-index: 0;
+            position: relative;
+            line-height: 50px;
+            color: rgb(64, 63, 63);
+            animation-name: h3animation;
+            animation-duration: 3s;
+            animation-iteration-count: inherit;
+        }
+        @keyframes h3animation {
+            0%{opacity: -1;top: 100px;}
+            100%{opacity: 1;top: 0px;}
+        }
+        .model{
+            font-size: 70px;
+            font-family: fantasy;
+        }
+        h5{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin-top: -100px;
+            margin-left: 125px;
+            z-index: 10;
+            position: relative;
+            color: rgb(146, 151, 154);
+            animation-name: h5animation;
+            animation-duration: 3s;
+            animation-iteration-count: inherit;
+        }
+        @keyframes h5animation {
+            0%{opacity: -2;left: 100px;}
+            100%{opacity: 1;left: 0px;}
+        }
+        .logo{
+            height: 50px;
+            width: 50px;
+            margin-left: 95%;
+            position: relative;
+            animation-name: logoanimation;
+            animation-duration: 3s;
+            animation-iteration-count: inherit;
+        }
+        @keyframes logoanimation {
+            0%{opacity: -1;top: -90px;}
+            100%{opacity: 1;top: 0px;}
+        }
+        .pic1{
+            margin-top: -180px;
+            margin-left: 250px;
+            position: relative;
+            z-index: 1;
+            animation-name: float_ww;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes float_ww{
+            0%{top: 0px;bottom: 0px}
+            50%{top: 20px;bottom: 0px}
+            100%{top: 0px;bottom: 0px}
+        }
+        .price{
+            margin: 43px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 40px;
+            line-height: 50px;
+            position: relative;
+        }
+        .rate{
+            width: 25%;
+            height: 400px;
+            background-color: rgba(77, 74, 74, 0.604);
+            margin-left: 75%;
+            margin-top: -370px;
+            position: relative;
+            z-index: 1;
+            animation-name: rateanimation;
+            animation-iteration-count: inherit;
+            animation-duration: 3s;
+        }
+        @keyframes rateanimation {
+            0%{left:300px;opacity: -2}
+            100%{left:0px;opacity: 1}
+        }
+        .buy{
+            background-color: green;
+            margin-left: 70px;
+            height: 40px;
+            width: 100px;
+        }
+        /* page_1 end */
+        /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+
+
+    </style>
+</head>
+<body>
+        <!-- menu bar -->
+        <div class="topmenu">
+            <div class="undergreen">
+                <!-- <span style="font-family: fantasy;color: black;font-size: 35px;margin-left: 10px">WINGS<sup style="font-size: 20px">TM</sup><br><p style="font-size: 10px; margin-top: -7px;margin-left: 14px;">gaming product site&#9888;</p></span> -->
+                <img class="logosm" src="./wings_logo_pink_ss.png" alt="">
+            </div>
+            <div class="bl al1"></div>
+            <div class="bl al2"></div>
+            <div class="bl al3"></div>
+            <div class="menu">
+                <ul>
+                    <li><a href="./wings_pro_pg02.html">SPEC</a></li>
+                    <li><a href="https://www.wingslifestyle.in/refund-and-replacement-policy/">SERVICE</a></li>
+                    <li><a href="./wings_pro_aboutus.html">ABOUT US</a></li>
+                    <li><a href="./wings_pro_contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+        
+        
+        
+        <!-- page 1 -->
+        <div class="page1">
+            <img class="logo" src="./wings_logo_pink_ss.png" alt="">
+            <h1>WINGS</h1>
+            <h3>PHANTOM<br>
+                <span class="model">850</span></h3>
+                <h5>TRUE WIRELESS <br>GAMING EARBUDS</h5>
+            <img class="pic1" src="./big_img_wings_pods.png" alt="">
+            <div class="rate">
+                <p class="price"> 
+                    <b>PHANTOM 850</b><br>
+                    Black - ₹2,599 <br>
+                    White - ₹2,999 <br>
+                    <a href="https://www.flipkart.com/wings-phantom-850-earbuds-game-mode-50-hrsplaytime-quad-enc-mic-app-support-bluetooth-gaming-headset/p/itm6a5396eebf6de">
+                        <input class="buy" type="button" value="Buy it now">
+                    </a>
+                </p>
+            </div>
+        </div>
+    <!--  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+    
+    
+</body>
+</html>

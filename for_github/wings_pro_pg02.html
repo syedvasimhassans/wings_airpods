@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allerta&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <style>
+         body{
+            background-color: rgba(110, 113, 116, 0.904);
+            margin: 10px;
+        }
+        .topmenu{
+            position:fixed;
+            margin-top: -68px;
+            width: 100%;
+            z-index: 20;
+            animation-name: topinmenu;
+            animation-duration: 2s;
+            animation-iteration-count: initial;
+        }
+        .logosm{
+            height: 60px;
+            margin-left: 10px;
+        }
+        .undergreen{
+            width: 99%;
+            height: 60px;
+            background-color: rgb(10, 138, 12);
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 128, 0, 0.497), -5px -5px 15px rgba(0, 128, 0, 0.497);
+            position: relative;
+            z-index: 0;
+            margin-left: -2px;
+        }
+        .bl{
+            height: 70px;
+            width: 10%;
+            /* clip-path: polygon(30% 0, 100% 0%, 70% 100%, 0% 100%); */
+            clip-path: polygon(36% 0, 100% 0%, 66% 100%, 0% 100%);
+            margin-top: -65px;
+        }
+        .al1{
+            margin-left: 35%;
+            background-color: rgba(0, 0, 0, 0.800);
+            position: relative;
+            z-index: 2;
+        }
+        .al2{
+            position: relative;
+            /* width: 10%; */
+            background-color: rgba(0, 0, 0, 0.500);
+            margin-left: 25%;
+            margin-top: -70px;
+            z-index: 3;
+        }
+        .al3{
+            position: relative;
+            /* width: 10%; */
+            background-color: rgba(0, 0, 0, 0.200);
+            z-index: 4;
+            margin-left: 15%;
+            margin-top: -70px;
+        }
+        .menu{
+            clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 20% 100%);
+            height: 70px;
+            width: 65%;
+            margin-left: 400px;
+            margin-top: -70px;
+            background-color: black;
+            display: flex;
+            text-align: end;
+            position: relative;
+            z-index: 1;
+        }
+        ul{
+            
+            margin-left: 200px;
+            margin-top: 12px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        ul li{
+            list-style: none;
+        }
+        ul li a{
+            text-decoration: none;
+            color: rgb(72, 72, 72);
+            font-size: 22px;
+            display: block;
+            padding: 10px 15px;
+            position: relative;
+        }
+        ul li a:before{
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: rgba(11, 255, 11, 0.755);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: all 0.5s;
+        }
+        ul li a:after{
+            content:'';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: rgba(11, 255, 11, 0.755);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: all 0.5s;
+        }
+        ul li a:hover{
+            color: rgba(11, 255, 11, 0.755);
+        }
+        ul li a:hover:before, ul li a:hover:after{
+            transform: scaleX(1);
+        } 
+        @media only screen and (max-width:992px) 
+        {
+            .undergreen{
+            width: 99%;
+            height: 45px;
+            background-color: rgb(10, 138, 12);
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 128, 0, 0.497), -5px -5px 15px rgba(0, 128, 0, 0.497);
+            position: relative;
+            z-index: 0;
+            margin-left: -2px;
+        }
+        .logosm{
+            height: 50px;
+            margin-left: 10px;
+        }
+            .menu{
+            clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 20% 100%);
+            height: 50px;
+            width: 70%;
+            margin-left: 27%;
+            margin-top: -50px;
+            background-color: black;
+            display: flex;
+            text-align: end;
+            position: relative;
+            z-index: 1;
+            }  
+            .bl{
+            height: 50px;
+            width: 10%;
+            clip-path: polygon(36% 0, 100% 0%, 66% 100%, 0% 100%);
+            margin-top: -45px;
+            position: relative;
+            z-index: 1;
+        }
+        .al1{
+            margin-left: 30%;
+            background-color: rgba(0, 0, 0, 0.800);
+            position: relative;
+            z-index: 2;
+        }
+        .al2{
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.500);
+            margin-left: 20%;
+            margin-top: -50px;
+            z-index: 3;
+        }
+        .al3{
+            position: relative;
+            /* width: 10%; */
+            background-color: rgba(0, 0, 0, 0.200);
+            z-index: 4;
+            margin-left: 10%;
+            margin-top: -50px;
+        }
+
+        }
+        @media only screen and (max-width:768px) 
+        {
+            .undergreen{
+            width: 99%;
+            height: 45px;
+            background-color: rgb(10, 138, 12);
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 128, 0, 0.497), -5px -5px 15px rgba(0, 128, 0, 0.497);
+            position: relative;
+            z-index: 0;
+            margin-left: -2px;
+        }
+        .logosm{
+            height: 50px;
+            margin-left: 10px;
+        }
+            .menu{
+            clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 20% 100%);
+            height: 50px;
+            width: 70%;
+            margin-left: 270px;
+            margin-top: -50px;
+            background-color: black;
+            display: flex;
+            text-align: end;
+            position: relative;
+            z-index: 1;
+            }  
+            .bl{
+            height: 50px;
+            width: 10%;
+            clip-path: polygon(36% 0, 100% 0%, 66% 100%, 0% 100%);
+            margin-top: -45px;
+            position: relative;
+            z-index: 1;
+        }
+        .al1{
+            margin-left: 30%;
+            background-color: rgba(0, 0, 0, 0.800);
+            position: relative;
+            z-index: 2;
+        }
+        .al2{
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.500);
+            margin-left: 20%;
+            margin-top: -50px;
+            z-index: 3;
+        }
+        .al3{
+            position: relative;
+            /* width: 10%; */
+            background-color: rgba(0, 0, 0, 0.200);
+            z-index: 4;
+            margin-left: 10%;
+            margin-top: -50px;
+        }
+
+        }
+            /* page_2 start =css */
+            .page2{
+            height: 600px;
+            width: 100%;
+            margin-top: 75px;
+            background-image: url(./black_bg_small.jpg);
+            background-size: cover;
+            overflow: hidden;
+            position: relative;
+        }
+        .pgt1{
+            margin-top: -25px;
+            font-weight: 100;
+            font-family: fantasy;
+            font-size: 100px;
+            color: rgb(64, 63, 63);
+            position: relative;
+            animation-name: pgt1animation;
+            animation-duration: 3s;
+            animation-iteration-count: inherit;
+        }
+        @keyframes pgt1animation {
+            0%{top: -200px;opacity: -2}
+            100%{top: 0px;opacity: 1}
+        }
+        .pgt2{
+            font-weight: 100;
+            font-family: fantasy;
+            font-size: 70px;
+            color: rgb(64, 63, 63);
+            margin-top: -130px;
+            position: relative;
+            animation-name: pgt2animation;
+            animation-duration: 3s;
+            animation-iteration-count: inherit;
+        }
+        @keyframes pgt2animation {
+            0%{top: -200px;opacity: -2}
+            100%{top: 0px;opacity: 1}
+        }
+        .phone{
+            height: 100%;
+            width: 50%;
+            margin-top: -17%;
+            position: relative;
+            z-index: 10;
+            animation-name: phoneanimation;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes phoneanimation{
+            /* 0%{top: 0px;bottom: 0px} */
+            /* 50%{top: -20px;bottom: 0px} */
+            /* 100%{top: 0px;bottom: 0px} */
+            0%{rotate: 2deg}
+            25%{rotate: 0deg}
+            50%{rotate: -2deg}
+            75%{rotate: 0deg}
+            100%{rotate: 1deg}
+
+        }
+        .spec{
+            height: 300px;
+            width: 350px;
+            position: static;
+            margin-top: -420px;
+            margin-left: 350px
+        }
+        .sp{
+            width: 100%;
+            height: 40px;
+            text-align: center;
+            justify-content: center;
+            border-radius: 10px;
+            border: black solid 1px;
+            clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 20% 100%);
+            background-color: rgb(10, 117, 20);
+            margin-bottom: 10px;
+            color: black;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        .more{
+            text-align: right;
+            color: white;
+        }
+        .charge{
+            border: 1px solid rgb(0, 0, 0);
+            background-image: url(./thunder_gif_charging.gif);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-top:-500px;
+            margin-left: 720px;
+            height: 580px;
+            width: 510px;
+            z-index: 1;
+            position: relative;
+            overflow: hidden;
+            animation-name: chargeanimation;
+            animation-duration: 5s;
+            animation-iteration-count: inherit;
+        }
+        @keyframes chargeanimation {
+            0%{opacity: -2}
+            100%{opacity: 1}
+        }
+        .c_ty{
+            margin-left: -30px;
+            margin-top: -70px;
+
+        }
+        .pgt3{
+            margin-top: -25px;
+            font-weight: 100;
+            font-family: fantasy;
+            font-size: 70px;
+            /* color: rgb(64, 63, 63); */
+            background-image: linear-gradient(to bottom, rgb(37, 154, 21), rgb(10, 24, 14));
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+        }
+        .pgt4{
+            font-weight: 100;
+            font-family: fantasy;
+            font-size: 50px;
+            /* color: rgb(64, 63, 63); */
+            background-image: linear-gradient(to bottom, rgb(37, 154, 21), rgb(10, 24, 14));
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            margin-top: -100px;
+            position: relative;
+        }
+        .pgt5{
+            font-weight: 100;
+            font-family: fantasy;
+            font-size: 30px;
+            color: rgb(64, 63, 63);
+            margin-top: -5px;
+            position: relative;
+        }
+        .pgt6{
+            font-weight: 100;
+            font-family: fantasy;
+            font-size: 30px;
+            /* color: rgb(64, 63, 63); */
+            color: white;
+            margin-top: -60px;
+            margin-left: 110px;
+        }
+        .pgt7{
+            font-weight: 100;
+            font-family: fantasy;
+            font-size: 17px;
+            /* color: rgb(64, 63, 63); */
+            color: white;
+            margin-top: -35px;
+            margin-left: 110px;
+            /* position: relative; */
+        }
+        .pgt8{
+            font-size: 70px;
+            /* color: rgb(64, 63, 63); */
+            color: white;
+            font-family: fantasy;
+            margin-left: 240px;
+            margin-top: -90px;
+        }
+        .pgt9{
+            font-weight: 100;
+            font-family: fantasy;
+            font-size: 30px;
+            /* color: rgb(64, 63, 63); */
+            color: white;
+            margin-top: -135px;
+            margin-left: 320px;
+        }
+        .pgt10{
+            font-weight: 100;
+            font-family: fantasy;
+            font-size: 17px;
+            /* color: rgb(64, 63, 63); */
+            color: white;
+            margin-left: 320px;
+            margin-top: -35px;
+        }
+        /* page_2 end */
+        /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+
+        /* page_3 start =css*/
+        .page3{
+            height: 600px;
+            width: 100%;
+            margin-top: 10px;
+            background-image: url(./black_bg_small.jpg);
+            background-size: cover;
+            overflow: hidden;
+            position: relative;
+        }
+        .plty{
+            height: 98%;
+            width: 49%;
+            background-image: url(./underbg_ssmall.jpg);
+            border-radius: 10px;
+            margin: 10px;
+            overflow: hidden;
+        }
+        .pow{
+            margin-left: -70px;
+            z-index: 3;
+            position: relative;
+        }
+        .p3p1{
+            font-family: fantasy;
+            font-size: 30px;
+            color: black;
+            margin-top: -400px;
+            margin-left: 150px;
+        }
+        .p3p2{
+            font-family: fantasy;
+            font-size: 50px;
+            color: black;
+            margin-top: -40px;
+            margin-left: 150px;
+        }
+        .nu501{
+            font-family: fantasy;
+            font-size: 200px;
+            margin-top: -100px;
+            margin-left: 200px;
+            z-index: 1;
+            position: relative;
+        }
+        .hour1{
+            margin-top: -270px;
+            margin-left: 340px;
+            font-family: 'Anton', sans-serif;
+            z-index: 3;
+            position: relative;
+        }
+        .case1{
+            margin-left: 220px;
+            margin-top: -10px;
+            font-family: 'Anton', sans-serif;
+            font-size: 30px;
+        }
+        .nu502{
+            font-family: fantasy;
+            font-size: 200px;
+            margin-left: 200px;
+            margin-top: -60px;
+            z-index: 1;
+            position: relative;
+        }
+        .hour2{
+            margin-top: -270px;
+            margin-left: 310px;
+            font-family: 'Anton', sans-serif;
+            z-index: 3;
+            position: relative;
+        }
+        .case2{
+            margin-left: 220px;
+            margin-top: -15px;
+            font-family: 'Anton', sans-serif;
+            font-size: 30px;
+            z-index: 4;
+        }
+        .single{
+            margin-top: -400px;
+            margin-left: 350px;
+        }
+
+
+        .plty1{
+            height: 48%;
+            width: 600px;
+            background-image: url(./underbg_ssmall.jpg);
+            border-radius: 10px;
+            margin: 10px;
+            overflow: hidden;
+            margin-top: -600px;
+            margin-left: 630px;
+        }
+        .sys{
+            height: 400px;
+            width: 400px;
+            margin-top: -80px;
+            margin-left: 150px;
+            position: relative;
+            z-index: 3;
+        }
+        .texsys{
+            font-family: fantasy;
+            color: black;
+            font-size: 30px;
+            margin-left: 10px;
+            margin-top: -320px;
+        }
+        .ipx{
+            margin-left: 520px;
+            margin-top: -40px;
+            height: 70px;
+            width: 70px;
+            border-radius: 10px;
+            /* background-image: url(./thunder-anime.gif); */
+            /* background-size: cover; */
+            /* -webkit-box-reflect: below 1px linear-gradient(transparent, green); */
+            background-color: rgb(71, 71, 71);
+            box-shadow: 0 0 5px rgb(1, 246, 246),0 0 5px rgb(1, 246, 246),0 0 5px rgb(1, 246, 246),0 0 5px rgb(1, 246, 246);
+            align-content: center;
+            justify-content: center;
+            position: relative;
+        }
+        .ipxtex{
+            padding: 15px;
+            font-size: 17px;
+            font-family: fantasy;
+            color: rgb(0, 0, 0);
+            text-shadow: 5px 5px 10px rgb(108, 109, 109);
+        }
+
+
+        .plty2{
+            height: 48%;
+            width: 600px;
+            background-image: url(./b-w_pods_show.jpg);
+            background-size: cover;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-left: 630px;
+        }
+        .cc{
+            font-family: fantasy;
+            color: black;
+            font-size: 40px;
+            margin-left: 100px;
+            margin-top: -5px;
+        }
+        .cc1{
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color:white;
+            font-size: 14px;
+            margin-top: 190px;
+            margin-left: 150px;
+            letter-spacing: 3px;
+        }
+        .cc2{
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color:white;
+            font-size: 14px;
+            margin-left: 350px;
+            letter-spacing: 3px;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- menu bar -->
+    <div class="topmenu">
+        <div class="undergreen">
+            <!-- <span style="font-family: fantasy;color: black;font-size: 35px;margin-left: 10px">WINGS<sup style="font-size: 20px">TM</sup><br><p style="font-size: 10px; margin-top: -7px;margin-left: 14px;">gaming product site&#9888;</p></span> -->
+            <img class="logosm" src="./wings_logo_pink_ss.png" alt="">
+        </div>
+        <div class="bl al1"></div>
+        <div class="bl al2"></div>
+        <div class="bl al3"></div>
+        <div class="menu">
+            <ul>
+                <li><a href="./wings_pro.html">HOME</a></li>
+                <li><a href="https://www.wingslifestyle.in/refund-and-replacement-policy/">SERVICE</a></li>
+                <li><a href="./wings_pro_aboutus.html">ABOUT US</a></li>
+                <li><a href="./wings_pro_contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+    <!-- page 2 -->
+
+
+    <div class="page2">
+        <p>
+            <p class="pgt1">SMART APP</p>
+            <P class="pgt2">SUPPORT</P>
+        </p>
+        <img class="phone" src="./phone_bg_wings.png" alt="">
+        <div class="spec">
+            <div class="touch_1 sp">
+                <p>Custmise Touch Controls</p>
+            </div>
+            <div class="name_2 sp">
+                <p>Custmise Device Name</p>
+            </div>
+            <div class="mode_3 sp">
+                <p>Custmise Equalizer Modes</p>
+            </div>
+            <div class="loca_4 sp"> 
+                <p>Locate Your Earbuds</p>
+            </div>
+            <div class="loca_5 sp"> 
+                <p>Atractive LED Light</p>
+            </div>
+            <div class="loca_6 sp"> 
+                <p>Charging Indigators</p>
+            </div>
+            <div class="loca_7 sp"> 
+                <p>Matt Finish</p>
+            </div>
+            <p class="more"> And More...</p>
+        </div>
+
+        <div class="charge">
+            <p class="pgt5">Powered by <br></p>
+            <p class="pgt3">BULLET</p>
+            <P class="pgt4">CHARGING<sup>TM</sup></P>
+            <img class="c_ty" src="./Charging_wings_pods.png" alt="">
+            <p class="pgt6">15 MINS<br></p>
+            <p class="pgt7">CHARGE</p>
+            <p class="pgt8">=</p>
+            <p class="pgt9">100 MINS<br></p>
+            <p class="pgt10">PLAYTIME</p>
+        </div>
+    </div>
+<!--  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+
+<!-- page-3 -->
+<div class="page3">
+    <div class="plty">
+        <img class="pow" src="./half_wings_pods.png" alt="">
+        <p class="p3p1">ENDLESS</p>
+        <p class="p3p2">PLAYTIME</p>
+        <br>
+        <p class="nu501" style="color: rgba(0, 128, 0, 0.675)">50</p>
+        <p class="hour1">HOURS</p>
+        <p class="case1">with Charging Case</p>
+        <p class="nu502" style="color: rgba(9, 143, 9,0.675)">10</p>
+        <p class="hour2">HOURS</p>
+        <p class="case2">on Single Change</p>
+        <img  class="single" src="./half_wings_buds.png" alt="">
+    </div>
+    <div class="plty1">
+        <img class="sys" src="./inside_wings_buds.png" alt="">
+        <p class="texsys">13 <span style="font-size: 20px;">MM</span> HIGH FID <br> COMPOSITE <br> DRIVERS <br><span style="font-family: Arial, Helvetica, sans-serif;">with</span><br>BOLD <br>BASS <sup style="font-size: 20px;">TM</sup></p>
+
+        <div class="ipx">
+            <p class="ipxtex"> I P X 5 <br>Rated</p>
+        </div> 
+    </div>
+    <div class="plty2">
+        <p class="cc">AVAILABLE IN 2 COLOURS</p>
+        <P class="cc1">Beastly Black</P> <P class="cc2">Vicious White</P>
+    </div>
+</div>
+<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+
+
+</body>
+</html>

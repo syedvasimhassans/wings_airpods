@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allerta&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background-color: rgba(110, 113, 116, 0.904);
+            margin: 10px;
+        }
+        .topmenu{
+            position:fixed;
+            margin-top: -68px;
+            width: 100%;
+            z-index: 20;
+            animation-name: topinmenu;
+            animation-duration: 2s;
+            animation-iteration-count: initial;
+        }
+        .logosm{
+            height: 60px;
+            margin-left: 10px;
+        }
+        .undergreen{
+            width: 99%;
+            height: 60px;
+            background-color: rgb(10, 138, 12);
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 128, 0, 0.497), -5px -5px 15px rgba(0, 128, 0, 0.497);
+            position: relative;
+            z-index: 0;
+            margin-left: -2px;
+        }
+        .bl{
+            height: 70px;
+            width: 10%;
+            /* clip-path: polygon(30% 0, 100% 0%, 70% 100%, 0% 100%); */
+            clip-path: polygon(36% 0, 100% 0%, 66% 100%, 0% 100%);
+            margin-top: -65px;
+        }
+        .al1{
+            margin-left: 35%;
+            background-color: rgba(0, 0, 0, 0.800);
+            position: relative;
+            z-index: 2;
+        }
+        .al2{
+            position: relative;
+            /* width: 10%; */
+            background-color: rgba(0, 0, 0, 0.500);
+            margin-left: 25%;
+            margin-top: -70px;
+            z-index: 3;
+        }
+        .al3{
+            position: relative;
+            /* width: 10%; */
+            background-color: rgba(0, 0, 0, 0.200);
+            z-index: 4;
+            margin-left: 15%;
+            margin-top: -70px;
+        }
+        .menu{
+            clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 20% 100%);
+            height: 70px;
+            width: 65%;
+            margin-left: 400px;
+            margin-top: -70px;
+            background-color: black;
+            display: flex;
+            text-align: end;
+            position: relative;
+            z-index: 1;
+        }
+        ul{
+            
+            margin-left: 200px;
+            margin-top: 12px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        ul li{
+            list-style: none;
+        }
+        ul li a{
+            text-decoration: none;
+            color: rgb(72, 72, 72);
+            font-size: 22px;
+            display: block;
+            padding: 10px 15px;
+            position: relative;
+        }
+        ul li a:before{
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: rgba(11, 255, 11, 0.755);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: all 0.5s;
+        }
+        ul li a:after{
+            content:'';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: rgba(11, 255, 11, 0.755);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: all 0.5s;
+        }
+        ul li a:hover{
+            color: rgba(11, 255, 11, 0.755);
+        }
+        ul li a:hover:before, ul li a:hover:after{
+            transform: scaleX(1);
+        } 
+        @media only screen and (max-width:992px) 
+        {
+            .undergreen{
+            width: 99%;
+            height: 45px;
+            background-color: rgb(10, 138, 12);
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 128, 0, 0.497), -5px -5px 15px rgba(0, 128, 0, 0.497);
+            position: relative;
+            z-index: 0;
+            margin-left: -2px;
+        }
+        .logosm{
+            height: 50px;
+            margin-left: 10px;
+        }
+            .menu{
+            clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 20% 100%);
+            height: 50px;
+            width: 70%;
+            margin-left: 27%;
+            margin-top: -50px;
+            background-color: black;
+            display: flex;
+            text-align: end;
+            position: relative;
+            z-index: 1;
+            }  
+            .bl{
+            height: 50px;
+            width: 10%;
+            clip-path: polygon(36% 0, 100% 0%, 66% 100%, 0% 100%);
+            margin-top: -45px;
+            position: relative;
+            z-index: 1;
+        }
+        .al1{
+            margin-left: 30%;
+            background-color: rgba(0, 0, 0, 0.800);
+            position: relative;
+            z-index: 2;
+        }
+        .al2{
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.500);
+            margin-left: 20%;
+            margin-top: -50px;
+            z-index: 3;
+        }
+        .al3{
+            position: relative;
+            /* width: 10%; */
+            background-color: rgba(0, 0, 0, 0.200);
+            z-index: 4;
+            margin-left: 10%;
+            margin-top: -50px;
+        }
+
+        }
+        @media only screen and (max-width:768px) 
+        {
+            .undergreen{
+            width: 99%;
+            height: 45px;
+            background-color: rgb(10, 138, 12);
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 128, 0, 0.497), -5px -5px 15px rgba(0, 128, 0, 0.497);
+            position: relative;
+            z-index: 0;
+            margin-left: -2px;
+        }
+        .logosm{
+            height: 50px;
+            margin-left: 10px;
+        }
+            .menu{
+            clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 20% 100%);
+            height: 50px;
+            width: 70%;
+            margin-left: 270px;
+            margin-top: -50px;
+            background-color: black;
+            display: flex;
+            text-align: end;
+            position: relative;
+            z-index: 1;
+            }  
+            .bl{
+            height: 50px;
+            width: 10%;
+            clip-path: polygon(36% 0, 100% 0%, 66% 100%, 0% 100%);
+            margin-top: -45px;
+            position: relative;
+            z-index: 1;
+        }
+        .al1{
+            margin-left: 30%;
+            background-color: rgba(0, 0, 0, 0.800);
+            position: relative;
+            z-index: 2;
+        }
+        .al2{
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.500);
+            margin-left: 20%;
+            margin-top: -50px;
+            z-index: 3;
+        }
+        .al3{
+            position: relative;
+            /* width: 10%; */
+            background-color: rgba(0, 0, 0, 0.200);
+            z-index: 4;
+            margin-left: 10%;
+            margin-top: -50px;
+        }
+
+        }
+        /* page_4 start =css */
+        .page4{
+            height: 600px;
+            width: 100%;
+            margin-top: 75px;
+            /* margin-top: 10px; */
+            background-image: url(./black_bg_small.jpg);
+            background-size: cover;
+            overflow: hidden;
+            position: relative;
+            /* display: flex;
+            flex-wrap: nowrap; */
+        }
+        .abhead{
+            margin-left: 35%;
+            font-size: 30px;
+            font-family: fantasy;
+            letter-spacing: 3px;
+        }
+        .ab1{
+            margin-top: 20px;
+            margin-left: 20px;
+            height: 350px;
+            width: 700px;
+            border-radius: 10px;
+            /* background-color: rgb(17, 152, 17); */
+            background-image: url(./underbg_ssmall.jpg);
+            background-size: cover;
+            overflow: hidden;
+        }
+        .ab2{
+            margin-top: -505px;
+            margin-left: 730px;
+            height: 550px;
+            width: 500px;
+            border-radius: 10px;
+            /* background-color: rgb(17, 152, 17); */
+            background-image: url(./underbg_ssmall.jpg);
+            background-size: cover;
+        }
+        .ab3{
+            margin-top: -115px;
+            margin-left:180px;
+            letter-spacing: 3px;
+            color: rgb(14, 122, 14);
+            font-family: fantasy;
+            font-size: 40px;
+        }
+        .ab4{
+            margin-left: 50px;
+            color: rgb(14, 122, 14);
+            font-family: fantasy;
+            font-size: 120px;
+        }
+        .abtext2{
+            margin-left: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        .abtext1{
+            margin-left: 30px;
+            position: relative;
+            z-index: 2;
+            font-size: 20px;
+            font-family: fantasy;
+        }
+        .abim1{
+            height: 300px;
+            width: 300px;   
+            margin-top: -165px;
+            margin-left: 250px;
+        }
+        .abim2{
+            margin-top: -80px;
+            margin-left: -170px;
+            height: 530px;
+            width: 750px;
+        }
+        /* paege_4 end*/
+        /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+
+    </style>
+</head>
+<body>
+    <!-- menu bar -->
+    <div class="topmenu">
+        <div class="undergreen">
+            <!-- <span style="font-family: fantasy;color: black;font-size: 35px;margin-left: 10px">WINGS<sup style="font-size: 20px">TM</sup><br><p style="font-size: 10px; margin-top: -7px;margin-left: 14px;">gaming product site&#9888;</p></span> -->
+            <img class="logosm" src="./wings_logo_pink_ss.png" alt="">
+        </div>
+        <div class="bl al1"></div>
+        <div class="bl al2"></div>
+        <div class="bl al3"></div>
+        <div class="menu">
+            <ul>
+                <li><a href="./wings_pro.html">HOME</a></li>
+                <li><a href="https://www.wingslifestyle.in/refund-and-replacement-policy/">SERVICE</a></li>
+                <li><a href="./wings_pro_aboutus.html">ABOUT US</a></li>
+                <li><a href="./wings_pro_contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+    <!-- page-4 -->
+<div class="page4">
+    <div class="abhead" style="color: white; text-decoration: underline">About Us</div>
+    <div class="ab4">
+        #1
+    </div>
+    <div class="ab3">
+        PRESTIGIOUS <br> BRAND ASIA
+    </div>
+    <div class="pg4 ab1">
+        <div class="abtext1"><br> Everyone's always busy talking about the journey. Do this, dare that, listen to, yada yada yada. No one talks about the fact that you've <br><br>
+            We want you to feel like your time is now. We want you to believe that world's your stage. It's no longer just about the hustle. You've got to own it. Over. And Over. And Over And Over Again. <br><br>
+            Come show us what you've got.<br> Show us You've Got Game!
+            </div>
+            <img class="abim1" src="./brandambasiters_bg_wings.png" alt="">
+    </div>
+
+    <div class="pg4 ab2" style="font-family: fantasy; font-size: 40px;">
+        <div class="abtext2">INDA'S fastest growing Audio, smartwatches and accessories Brand</div>
+        <img class="abim2" src="./product_wings - table.png" alt="">
+    </div>
+    <!-- <div class="ab3">
+        #1 <br>
+        PRESTIGIOUS <br> BRAND ASIA
+    </div> -->
+</div>
+<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+
+</body>
+</html>
